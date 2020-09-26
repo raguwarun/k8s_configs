@@ -1,22 +1,17 @@
-# k8s_configs
+# Setup Kubernetes (K8s) Cluster on AWS
+1. Create Ubuntu EC2 instance
 
-Setup Kubernetes (K8s) Cluster on AWS
-Create Ubuntu EC2 instance
-
-install AWSCLI
-
- curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip
- apt install unzip python
- unzip awscli-bundle.zip
- #sudo apt-get install unzip - if you dont have unzip in your system
- ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-Install kubectl
-
- curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
- chmod +x ./kubectl
- sudo mv ./kubectl /usr/local/bin/kubectl
+2. Install AWSCLI and pip/python
+   sudo apt-get update -y
+   sudo apt-get install awscli
+   
+3. Install kubectl
+   '''curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+   chmod +x ./kubectl
+   sudo mv ./kubectl /usr/local/bin/kubectl'''
 You can also install from https://kubernetes.io/docs/tasks/tools/install-kubectl/
-Create an IAM user/role with Route53, EC2, IAM and S3 full access
+
+4. Create an IAM user/role with Route53, EC2, IAM and S3 full access
 
 Attach IAM role to ubuntu server
 
